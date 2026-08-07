@@ -1,144 +1,147 @@
 # codex-ultra
 
 <p align="center">
-  <img src="./logo.jpeg" alt="codex-ultra 品牌图" width="120" />
+  <img src="./logo.jpeg" alt="codex-ultra" width="120" />
 </p>
 
-<p align="center"><strong>面向 Codex CLI 的本地优先 AI 编程工作台</strong></p>
+<p align="center"><strong>A local-first AI coding workbench for Codex CLI</strong></p>
 
 <p align="center">
-  <a href="https://codex-ultra.top/">官方网站</a> ·
-  <a href="https://github.com/layola13/codex-ultra/releases">下载发布包</a> ·
-  <a href="https://github.com/layola13/codex-ultra/issues">提交 Issue</a>
+  <a href="https://codex-ultra.top/">Official website</a> ·
+  <a href="https://github.com/layola13/codex-ultra/releases">Download releases</a> ·
+  <a href="https://github.com/layola13/codex-ultra/issues">Open an issue</a> ·
+  <a href="./README_CN.md">中文说明</a>
 </p>
 
 ![Windows](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-2ea44f?style=flat-square)
 ![Release](https://img.shields.io/github/v/release/layola13/codex-ultra?include_prereleases&style=flat-square&label=latest%20release)
 ![Issues](https://img.shields.io/github/issues/layola13/codex-ultra?style=flat-square)
 
-codex-ultra 将 Codex CLI 的终端能力放进一个可视化工作台：在同一窗口中管理对话、工作区、任务计划、工具调用、文件差异、模型渠道和插件。它优先在本机运行，网络请求只会发送到你主动配置的第三方模型服务。
+## About
 
-> **仓库定位**：这是 codex-ultra 的产品说明、问题反馈和二进制发布仓库。此仓库**不提供源码下载、源码压缩包或源码构建流程**；请从 [Releases](https://github.com/layola13/codex-ultra/releases) 下载 Windows 安装版或便携版。
+codex-ultra is a local-first AI coding workbench for Codex CLI. It understands your codebase and helps you move faster by handling routine tasks, explaining complex code, reviewing changes, coordinating multi-step work, and managing Git workflows — all through natural-language commands in a visual desktop workspace.
 
-> GitHub 会为每个 Release 标签自动生成名为 `Source code (zip)` / `Source code (tar.gz)` 的仓库快照。它们只包含本仓库的说明文档、Issue 配置和展示图片，**不包含 codex-ultra 产品源码，也不是可安装程序**。
+Learn more at [codex-ultra.top](https://codex-ultra.top/).
 
-## 快速入口
+> **Repository scope:** This repository is for product documentation, issue tracking, and binary releases. It does **not** provide the product source code, source archives, or a source build workflow. Download the Windows installer or portable build from [GitHub Releases](https://github.com/layola13/codex-ultra/releases).
 
-| 需求 | 入口 |
+> GitHub automatically generates `Source code (zip)` and `Source code (tar.gz)` snapshots for tagged releases. Those snapshots contain only the documentation repository, issue configuration, and showcase images. They do **not** contain the codex-ultra product source code and are not installable programs.
+
+## Quick Links
+
+| Need | Link |
 | --- | --- |
-| 了解产品与使用边界 | [官方网站](https://codex-ultra.top/) |
-| 下载最新版 | [GitHub Releases](https://github.com/layola13/codex-ultra/releases)（选择列表最上方版本） |
-| 查看版本变更 | [全部 Releases](https://github.com/layola13/codex-ultra/releases) |
-| 报告崩溃、安装或运行问题 | [提交 Issue](https://github.com/layola13/codex-ultra/issues/new/choose) |
-| 查看隐私、条款与授权 | [法律与许可](#法律与许可) |
+| Product overview and usage boundaries | [Official website](https://codex-ultra.top/) |
+| Download the newest build | [GitHub Releases](https://github.com/layola13/codex-ultra/releases) (choose the top release) |
+| Read version notes | [All releases](https://github.com/layola13/codex-ultra/releases) |
+| Report a crash, install, or runtime issue | [Open an issue](https://github.com/layola13/codex-ultra/issues/new/choose) |
+| Switch to Chinese | [README_CN.md](./README_CN.md) |
 
-## 界面预览
+## Screenshots
 
-### 工作台与新对话
+### Workbench and New Conversations
 
-![codex-ultra 工作台](./screen.png)
+![codex-ultra workbench](./screen.png)
 
-三栏工作台支持历史会话、实时对话、任务计划、文件和工具审计。新对话可以直接选择工作区、模型、思考强度和权限预设。
+The three-column workbench combines conversation history, streaming chat, task plans, file inspection, and tool auditing. Start a conversation with a workspace, model, thinking level, and permission preset.
 
-### 多智能体与长任务
+### Multi-agent and Long-running Work
 
-![codex-ultra 多智能体工作流](./work.png)
+![codex-ultra multi-agent workflow](./work.png)
 
-任务计划会显示进行中和已完成的步骤；Sidechat 为辅助线程提供独立上下文，适合并行检查测试、文档或不同工作区。
+Plans show pending, active, and completed steps. Sidechat tabs keep auxiliary threads isolated so you can review tests, documentation, or another workspace in parallel.
 
-### 模型渠道与转发配置
+### Model Channels and Relay Settings
 
-![codex-ultra 渠道设置](./config.png)
+![codex-ultra channel settings](./config.png)
 
-在设置中管理 Responses、Chat Completions、Ollama、LM Studio 等兼容渠道，按模型维护别名、倍率、分组和启用状态。API Key 不写入项目仓库或 `config.toml`。
+Configure Responses, Chat Completions, Ollama, LM Studio, and other compatible channels. Maintain model aliases, multipliers, groups, and activation state without writing API keys into this repository or `config.toml`.
 
-## 主要能力
+## Highlights
 
-- **Codex 工作台**：React + MUI 三栏布局，支持会话历史、流式消息、Markdown、代码差异和长会话虚拟列表。
-- **任务与协作**：Plan/Goal 控制、任务清单、Sidechat 隔离标签页，以及多智能体工作流的状态展示。
-- **真实 CLI 桥接**：通过本地 Bun HTTP/WebSocket bridge 对接 `codex app-server`，Web 工作台与 Codex TUI 可共享会话历史。
-- **模型渠道**：保存和测试多个第三方 API 渠道，选择活动模型，配置模型别名、倍率、分组和访问白名单。
-- **附件与工作区**：支持图片、PDF、Office 和文本附件；工作区可使用本地文件夹或 SSH 远程目录。
-- **插件与主题**：管理 Codex 插件、MCP、Hooks、启动适配器和可导入导出的主题背景。
-- **本地优先**：配置、会话、审计记录和偏好默认保存在本机；桌面端默认绑定回环地址。
-- **安全与诊断**：权限预设、危险操作审计、登录保护、TOTP、运行状态和 WebSocket 诊断。
+- **Codex workbench:** React + MUI three-column layout with resumable history, streaming Markdown, code diffs, and virtualized long transcripts.
+- **Planning and collaboration:** Plan/Goal controls, task lists, isolated Sidechat tabs, and multi-agent workflow status.
+- **Real CLI bridge:** A local Bun HTTP/WebSocket bridge connects the UI to `codex app-server`; Web and Codex TUI sessions can share history.
+- **Model channels:** Save and test third-party API channels, select active models, and configure aliases, multipliers, groups, and access allowlists.
+- **Attachments and workspaces:** Images, PDF, Office, and text attachments plus local-folder and SSH workspace selection.
+- **Plugins and themes:** Codex plugins, MCP, Hooks, launch adapters, and importable/exportable theme backgrounds.
+- **Local-first operation:** Configuration, sessions, audit records, and preferences stay on the local machine by default; desktop mode binds to loopback.
+- **Security and diagnostics:** Permission presets, dangerous-operation audit logs, login protection, TOTP, runtime health, and WebSocket diagnostics.
 
-## 下载与安装
+## Download and Install
 
-### 1. 下载桌面包
+### 1. Download a desktop build
 
-打开 [Releases](https://github.com/layola13/codex-ultra/releases)，在列表最上方版本的 **Assets** 中选择：
+Open [GitHub Releases](https://github.com/layola13/codex-ultra/releases) and choose the top release. Under **Assets**, download one of these files:
 
-| 文件 | 适用场景 |
+| File | Use case |
 | --- | --- |
-| `codex-ultra-setup.exe` | Windows 安装版，创建开始菜单和桌面快捷方式 |
-| `codex-ultra.exe` | Windows x64 便携版，解压或直接运行，不修改系统安装目录 |
+| `codex-ultra-setup.exe` | Windows installer with Start Menu and desktop shortcuts |
+| `codex-ultra.exe` | Windows x64 portable build that does not install into a system directory |
 
-下载前请查看 Release 说明中的版本号、发布日期、已知问题和校验信息。不要从 Issue 附件或第三方网盘获取安装包。
+Read the release version, date, known issues, and checksums before installing. Do not download packages from issue attachments or third-party file hosts.
 
-### 2. 准备 Codex CLI
+### 2. Install Codex CLI
 
-桌面包不内置 Codex CLI。首次使用前，请在本机安装并登录官方 CLI：
+The desktop packages do not bundle Codex CLI. Install and sign in to the official CLI before starting your first conversation:
 
 ```powershell
 npm install -g @openai/codex
 codex --version
 ```
 
-需要支持 `codex app-server` 的 CLI 版本。若程序提示未检测到 CLI，可重新打开终端确认 `codex` 在 `PATH` 中，或设置 `CODEX_BIN` 指向实际可执行文件。
+Use a CLI version that supports `codex app-server`. If the app cannot find it, reopen PowerShell and verify that `codex` is on `PATH`, or set `CODEX_BIN` to the executable path.
 
-### 3. 启动
+### 3. Start codex-ultra
 
-1. 双击 `codex-ultra-setup.exe` 完成安装，或直接运行 `codex-ultra.exe`。
-2. 等待本地服务启动，程序会打开 codex-ultra 桌面工作台。
-3. 在设置中选择模型渠道并填入自己的 API Key；密钥不会随发布包提供。
-4. 在新对话中选择项目目录，开始使用 Codex。
+1. Run `codex-ultra-setup.exe`, or launch `codex-ultra.exe` directly.
+2. Wait for the local service and codex-ultra desktop workbench to start.
+3. Select a model channel in Settings and enter your own API key; keys are never shipped with the release.
+4. Choose a project directory in a new conversation and start working with Codex.
 
-Windows 安装版和便携版都需要本机可用的 Codex CLI、模型服务凭证以及可访问的网络。程序本身不代替 OpenAI、Anthropic、Google 或其他上游服务的账号与计费。
+Both Windows packages require a working local Codex CLI, your own model-service credentials, and network access to the providers you configure. codex-ultra does not provide upstream accounts or billing.
 
-更完整的 Windows 首次运行、升级、回滚和故障排查说明见 [`docs/DOWNLOADS.md`](./docs/DOWNLOADS.md)。
+See [`docs/DOWNLOADS.md`](./docs/DOWNLOADS.md) for first-run checks, upgrades, rollback guidance, and the release checklist.
 
-## 常见问题
+## FAQ
 
-### 提示“未检测到 Codex CLI”
+### “Codex CLI was not detected”
 
-在 PowerShell 执行 `codex --version`。如果命令不存在，先运行上面的 npm 安装命令；如果安装到了自定义目录，请把该目录加入 `PATH`，或设置 `CODEX_BIN`。
+Run `codex --version` in PowerShell. If the command is missing, install it with the npm command above. For a custom installation directory, add it to `PATH` or set `CODEX_BIN`.
 
-### 工作台打开但无法对话
+### The workbench opens but conversations fail
 
-确认 Codex CLI 支持 `codex app-server`，并在设置中完成至少一个可用模型渠道。对 Chat Completions-only 渠道，需要额外的 Responses 兼容适配器。
+Confirm that your Codex CLI supports `codex app-server` and that at least one usable model channel is configured. Chat Completions-only providers need a Responses-compatible adapter.
 
-### 如何升级
+### How do I upgrade?
 
-从 [Releases](https://github.com/layola13/codex-ultra/releases) 列表最上方版本下载新包并覆盖安装即可。便携版请先退出正在运行的程序，再替换旧文件；重要配置和会话位于用户数据目录，不在安装包内。
+Download the top entry from the [Releases](https://github.com/layola13/codex-ultra/releases) list and install it over the current version. Exit the portable build before replacing its executable. User configuration and sessions live outside the package directory.
 
-## 提交 Issue
+## Reporting Issues
 
-请先搜索 [已有 Issue](https://github.com/layola13/codex-ultra/issues)，确认没有重复报告。新建 Issue 时尽量提供：
+Search [existing issues](https://github.com/layola13/codex-ultra/issues) before opening a new one. Include:
 
-- Release 版本和下载文件名（安装版或便携版）；
-- Windows 版本、CPU 架构、Codex CLI 版本和模型渠道；
-- 可重复的操作步骤、期望结果与实际结果；
-- 脱敏后的日志、截图或错误编号。
+- the Release version and package filename (installer or portable);
+- your Windows version, CPU architecture, Codex CLI version, and model channel;
+- reproducible steps, expected behavior, and actual behavior;
+- redacted logs, screenshots, or error codes.
 
-请删除 API Key、访问令牌、个人路径和私有代码后再上传日志。安全问题请不要公开提交，先通过官网公布的联系方式联系维护者。
+Remove API keys, access tokens, personal paths, and private source code before uploading logs. For security vulnerabilities, follow [`SECURITY.md`](./SECURITY.md) instead of posting sensitive details publicly.
 
-## 法律与许可
+## Legal and Licensing
 
-本仓库随产品说明提供与当前发布版本对应的法律文件：
+- [LICENSE](./LICENSE): copyright, redistribution, and commercial-use policy;
+- [LEGAL.md](./LEGAL.md) / [LEGAL_EN.md](./LEGAL_EN.md): merged privacy, terms, and liability disclaimer;
+- [PRIVACY.md](./PRIVACY.md) / [PRIVACY_EN.md](./PRIVACY_EN.md): privacy policy;
+- [TERMS.md](./TERMS.md) / [TERMS_EN.md](./TERMS_EN.md): terms of service and disclaimer;
+- [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md) / [THIRD_PARTY_LICENSES_EN.md](./THIRD_PARTY_LICENSES_EN.md): third-party components and licenses.
 
-- [LICENSE](./LICENSE)：版权、修改/再发布和商业使用政策；
-- [LEGAL.md](./LEGAL.md) / [LEGAL_EN.md](./LEGAL_EN.md)：隐私、服务条款与综合免责声明；
-- [PRIVACY.md](./PRIVACY.md) / [PRIVACY_EN.md](./PRIVACY_EN.md)：隐私政策；
-- [TERMS.md](./TERMS.md) / [TERMS_EN.md](./TERMS_EN.md)：服务条款与免责声明；
-- [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md) / [THIRD_PARTY_LICENSES_EN.md](./THIRD_PARTY_LICENSES_EN.md)：第三方开源组件及许可证。
+Use codex-ultra in accordance with applicable law and the policies of the model providers you configure. The software is provided “as is”; back up important projects yourself.
 
-使用 codex-ultra 仍须遵守所在地区法律及上游模型服务商的使用政策。软件按“原样”提供，重要项目请自行备份。
+## Contact
 
-## 联系方式
+- Website: [codex-ultra.top](https://codex-ultra.top/)
+- Commercial licensing and project contact: [sonygodx@gmail.com](mailto:sonygodx@gmail.com)
+- Product feedback: [GitHub Issues](https://github.com/layola13/codex-ultra/issues)
 
-- 官网：[codex-ultra.top](https://codex-ultra.top/)
-- 商业授权与项目联系：[sonygodx@gmail.com](mailto:sonygodx@gmail.com)
-- 问题反馈：[GitHub Issues](https://github.com/layola13/codex-ultra/issues)
-
-© 2026 codex-ultra 项目维护团队 / sonygodx@gmail.com
+© 2026 codex-ultra Project Maintainers / layola13
