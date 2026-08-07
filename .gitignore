@@ -1,0 +1,10 @@
+# Release assets belong in GitHub Releases, not Git history.
+*.exe
+*.blockmap
+latest.yml
+release/
+
+# Local operating-system files.
+.DS_Store
+Thumbs.db
+Desktop.ini

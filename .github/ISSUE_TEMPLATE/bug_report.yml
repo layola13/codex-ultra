@@ -1,0 +1,82 @@
+name: Bug report
+description: 报告安装、启动、对话或桌面端运行问题
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请先搜索已有 Issue，并确认问题发生在最新 Release。
+        请勿在公开内容中粘贴 API Key、访问令牌、私有代码或完整个人路径。
+  - type: input
+    id: version
+    attributes:
+      label: codex-ultra 版本
+      description: 例如 0.0.1-preview.18，可在 Release 或程序关于页查看。
+      placeholder: 0.0.1-preview.x
+    validations:
+      required: true
+  - type: dropdown
+    id: package
+    attributes:
+      label: 下载包类型
+      options:
+        - codex-ultra-setup.exe 安装版
+        - codex-ultra.exe 便携版
+        - 不确定或其他
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows 版本
+      placeholder: Windows 11 24H2 x64
+    validations:
+      required: true
+  - type: input
+    id: codex
+    attributes:
+      label: Codex CLI 版本
+      description: 请粘贴 `codex --version` 的结果；若未安装请填写“未安装”。
+      placeholder: codex-cli 0.146.0
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 按顺序描述从启动到出现问题的操作。
+      placeholder: |
+        1. 打开……
+        2. 选择……
+        3. 点击……
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 脱敏日志或截图
+      description: 上传前删除 API Key、令牌、私有路径和代码内容。
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已搜索重复 Issue。
+          required: true
+        - label: 我已移除日志中的敏感信息。
+          required: true
