@@ -10,12 +10,14 @@
   <a href="https://codex-ultra.top/">Official website</a> ·
   <a href="https://github.com/layola13/codex-ultra/releases">Download releases</a> ·
   <a href="https://github.com/layola13/codex-ultra/issues">Open an issue</a> ·
+  <a href="https://www.npmjs.com/package/@codex-ultra/cxu">npm Package</a> ·
   <a href="./README_CN.md">中文说明</a>
 </p>
 
 ![Windows](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-2ea44f?style=flat-square)
 ![Release](https://img.shields.io/github/v/release/layola13/codex-ultra?include_prereleases&style=flat-square&label=latest%20release)
 ![Issues](https://img.shields.io/github/issues/layola13/codex-ultra?style=flat-square)
+[![npm](https://img.shields.io/npm/v/@codex-ultra/cxu?style=flat-square&label=npm)](https://www.npmjs.com/package/@codex-ultra/cxu)
 
 ## About
 
@@ -128,13 +130,15 @@ Codespaces images already ship Node.js and npm, so opening this repository in a 
 
 ``bash
 bash scripts/install-cxu.sh
-``n
+`
+
 That is equivalent to:
 
 ``bash
 npm install -g @codex-ultra/cxu
 cxu doctor
-``n
+`
+
 No npm login is needed for any of these steps.
 
 ## FAQ

@@ -10,12 +10,14 @@
   <a href="https://codex-ultra.top/">官方网站</a> ·
   <a href="https://github.com/layola13/codex-ultra/releases">下载发布包</a> ·
   <a href="https://github.com/layola13/codex-ultra/issues">提交 Issue</a> ·
+  <a href="https://www.npmjs.com/package/@codex-ultra/cxu">npm 包</a> ·
   <a href="./README.md">English</a>
 </p>
 
 ![Windows](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-2ea44f?style=flat-square)
 ![Release](https://img.shields.io/github/v/release/layola13/codex-ultra?include_prereleases&style=flat-square&label=latest%20release)
 ![Issues](https://img.shields.io/github/issues/layola13/codex-ultra?style=flat-square)
+[![npm](https://img.shields.io/npm/v/@codex-ultra/cxu?style=flat-square&label=npm)](https://www.npmjs.com/package/@codex-ultra/cxu)
 
 codex-ultra 将 Codex CLI 的终端能力放进一个可视化工作台：在同一窗口中管理对话、工作区、任务计划、工具调用、文件差异、模型渠道和插件。它优先在本机运行，网络请求只会发送到你主动配置的第三方模型服务。
 
@@ -130,13 +132,15 @@ Codespaces 镜像自带 Node.js 和 npm，在浏览器里打开本仓库即可�
 
 ``bash
 bash scripts/install-cxu.sh
-``n
+`
+
 等价于：
 
 ``bash
 npm install -g @codex-ultra/cxu
 cxu doctor
-``n
+`
+
 以上步骤全程不需要登录 npm 账号。
 
 ## 常见问题
