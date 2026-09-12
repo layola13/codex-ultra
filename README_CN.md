@@ -37,6 +37,7 @@ codex-ultra 是一套面向 Codex CLI 的本地优先 AI 编程工作台。它�
 | 下载最新版 | [GitHub Releases](https://github.com/layola13/codex-ultra/releases)（选择列表最上方版本） |
 | 查看版本变更 | [全部 Releases](https://github.com/layola13/codex-ultra/releases) |
 | 报告崩溃、安装或运行问题 | [提交 Issue](https://github.com/layola13/codex-ultra/issues/new/choose) |
+| 通过 npm 安装 cxu 命令行 | [cxu 命令行](#cxu-命令行-npm) |
 | 查看隐私、条款与授权 | [法律与许可](#法律与许可) |
 
 ## 界面预览
@@ -104,6 +105,24 @@ codex --version
 Windows 安装版和便携版都需要本机可用的 Codex CLI、模型服务凭证以及可访问的网络。程序本身不代替 OpenAI、Anthropic、Google 或其他上游服务的账号与计费。
 
 更完整的 Windows 首次运行、升级、回滚和故障排查说明见 [`docs/DOWNLOADS.md`](./docs/DOWNLOADS.md)。
+
+## cxu 命令行 (npm)
+
+`cxu` 命令行包含纯 TypeScript 工具集和首次运行自检，Windows / Linux / macOS 只要装了 Node.js 18+ 就能用：
+
+```powershell
+npm install -g @codex-ultra/cxu
+cxu doctor
+```
+
+`cxu doctor` 会检查 bun 以及 codex/claude/agy/grok/pi/opencode 六个 CLI。Codex CLI 是必需的，其余可选；每个缺失项都会给出官方安装命令。单装或一键装齐：
+
+```powershell
+cxu install codex --yes
+cxu install --all --yes
+```
+
+不加 `--yes` 时，`cxu install` 只打印命令，不做任何改动。
 
 ## 常见问题
 

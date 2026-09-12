@@ -35,6 +35,7 @@ Learn more at [codex-ultra.top](https://codex-ultra.top/).
 | Download the newest build | [GitHub Releases](https://github.com/layola13/codex-ultra/releases) (choose the top release) |
 | Read version notes | [All releases](https://github.com/layola13/codex-ultra/releases) |
 | Report a crash, install, or runtime issue | [Open an issue](https://github.com/layola13/codex-ultra/issues/new/choose) |
+| Install the cxu CLI via npm | [cxu Command Line](#cxu-command-line-npm) |
 | Switch to Chinese | [README_CN.md](./README_CN.md) |
 
 ## Screenshots
@@ -102,6 +103,24 @@ Use a CLI version that supports `codex app-server`. If the app cannot find it, r
 Both Windows packages require a working local Codex CLI, your own model-service credentials, and network access to the providers you configure. codex-ultra does not provide upstream accounts or billing.
 
 See [`docs/DOWNLOADS.md`](./docs/DOWNLOADS.md) for first-run checks, upgrades, rollback guidance, and the release checklist.
+
+## cxu Command Line (npm)
+
+The `cxu` CLI ships the pure-TypeScript toolkit plus a first-run doctor that checks your machine. It works on Windows, Linux, and macOS with plain Node.js 18+:
+
+```powershell
+npm install -g @codex-ultra/cxu
+cxu doctor
+```
+
+`cxu doctor` checks bun and the codex/claude/agy/grok/pi/opencode CLIs. Codex CLI is required; the rest are optional, and every missing tool prints its official install command. To install a single tool or everything at once:
+
+```powershell
+cxu install codex --yes
+cxu install --all --yes
+```
+
+Without `--yes`, `cxu install` only prints the command and changes nothing.
 
 ## FAQ
 
