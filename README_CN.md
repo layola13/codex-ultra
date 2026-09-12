@@ -124,6 +124,21 @@ cxu install --all --yes
 
 不加 `--yes` 时，`cxu install` 只打印命令，不做任何改动。
 
+### GitHub Codespaces
+
+Codespaces 镜像自带 Node.js 和 npm，在浏览器里打开本仓库即可使用。dev container 在首次创建时会自动装好 `cxu`；要在任意终端手动安装：
+
+``bash
+bash scripts/install-cxu.sh
+``n
+等价于：
+
+``bash
+npm install -g @codex-ultra/cxu
+cxu doctor
+``n
+以上步骤全程不需要登录 npm 账号。
+
 ## 常见问题
 
 ### 提示“未检测到 Codex CLI”

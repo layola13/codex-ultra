@@ -1,0 +1,5 @@
+{
+  "name": "codex-ultra",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "postCreateCommand": "npm install -g @codex-ultra/cxu && (cxu doctor || true)"
+}

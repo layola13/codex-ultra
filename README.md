@@ -122,6 +122,21 @@ cxu install --all --yes
 
 Without `--yes`, `cxu install` only prints the command and changes nothing.
 
+### GitHub Codespaces
+
+Codespaces images already ship Node.js and npm, so opening this repository in a Codespace is enough. The dev container installs `cxu` automatically on first create; to install manually in any terminal:
+
+``bash
+bash scripts/install-cxu.sh
+``n
+That is equivalent to:
+
+``bash
+npm install -g @codex-ultra/cxu
+cxu doctor
+``n
+No npm login is needed for any of these steps.
+
 ## FAQ
 
 ### “Codex CLI was not detected”
