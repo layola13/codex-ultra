@@ -108,7 +108,17 @@ See [`docs/DOWNLOADS.md`](./docs/DOWNLOADS.md) for first-run checks, upgrades, r
 
 ## cxu Command Line (npm)
 
-The `cxu` CLI ships the pure-TypeScript toolkit plus a first-run doctor that checks your machine. It works on Windows, Linux, and macOS with plain Node.js 18+:
+From 0.2.0 the `@codex-ultra/cxu` package ships prebuilt Bun executables for five platforms. Installing the CLI and running it starts the server and web UI by default, similar to launching a pre-packed standalone executable.
+
+### Supported platforms (npm prebuilt binaries)
+
+- Windows 10/11 x64: `@codex-ultra/cxu-win32-x64`
+- Linux x64: `@codex-ultra/cxu-linux-x64`
+- Linux ARM64: `@codex-ultra/cxu-linux-arm64`
+- macOS Intel (x64): `@codex-ultra/cxu-darwin-x64`
+- macOS Apple Silicon (ARM64): `@codex-ultra/cxu-darwin-arm64`
+
+Each scoped package bundles the server binary plus the web-dist and declares `os`/`cpu` so npm downloads the matching binary. The main `@codex-ultra/cxu` package depends on the platform-matched prebuilt for you automatically.
 
 ```powershell
 npm install -g @codex-ultra/cxu
@@ -126,24 +136,18 @@ Without `--yes`, `cxu install` only prints the command and changes nothing.
 
 ### GitHub Codespaces
 
-Codespaces images already ship Node.js and npm, so opening this repository in a Codespace is enough. The dev container installs `cxu` automatically on first create; to install manually in any terminal:
+Codespaces images already ship Node.js and npm, so opening this repository in a Codespace is enough. To install manually in any terminal:
 
-``bash
-bash scripts/install-cxu.sh
-`
-
-That is equivalent to:
-
-``bash
+```bash
 npm install -g @codex-ultra/cxu
 cxu doctor
-`
+```
 
 No npm login is needed for any of these steps.
 
 ## FAQ
 
-### “Codex CLI was not detected”
+### "Codex CLI was not detected"
 
 Run `codex --version` in PowerShell. If the command is missing, install it with the npm command above. For a custom installation directory, add it to `PATH` or set `CODEX_BIN`.
 
@@ -174,7 +178,7 @@ Remove API keys, access tokens, personal paths, and private source code before u
 - [TERMS.md](./TERMS.md) / [TERMS_EN.md](./TERMS_EN.md): terms of service and disclaimer;
 - [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md) / [THIRD_PARTY_LICENSES_EN.md](./THIRD_PARTY_LICENSES_EN.md): third-party components and licenses.
 
-Use codex-ultra in accordance with applicable law and the policies of the model providers you configure. The software is provided “as is”; back up important projects yourself.
+Use codex-ultra in accordance with applicable law and the policies of the model providers you configure. The software is provided "as is"; back up important projects yourself.
 
 ## Contact
 
