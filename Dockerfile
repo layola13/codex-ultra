@@ -25,6 +25,8 @@ RUN mkdir -p /opt/codex-ultra /usr/local/bin \
 
 ENV PATH="/usr/local/bin:${PATH}"
 ENV CODEX_UI_HOST="0.0.0.0"
+ENV CODEX_UI_TRUST_PROXY="1"
+ENV CODEX_UI_ALLOWED_ORIGINS="*"
 ENV PORT="43110"
 
 EXPOSE 43110

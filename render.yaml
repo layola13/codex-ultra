@@ -8,3 +8,7 @@ services:
     envVars:
       - key: CODEX_UI_HOST
         value: 0.0.0.0
+      - key: CODEX_UI_TRUST_PROXY
+        value: "1"
+      - key: CODEX_UI_ALLOWED_ORIGINS
+        value: "*"
