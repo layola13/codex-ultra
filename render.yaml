@@ -14,3 +14,5 @@ services:
         value: "*"
       - key: CODEX_HOME
         value: /opt/codex-ultra/.codex
+      - key: CODEX_UI_LEGAL_DIR
+        value: /opt/codex-ultra

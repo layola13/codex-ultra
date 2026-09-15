@@ -13,6 +13,7 @@ export CODEX_UI_TRUST_PROXY="1"
 export CODEX_UI_ALLOWED_ORIGINS="*"
 export CODEX_UI_HOST="0.0.0.0"
 export PORT="${PORT:-43110}"
+export CODEX_UI_LEGAL_DIR="${CODEX_UI_LEGAL_DIR:-$(pwd)}"
 
 # 确保全局 PATH 包含常见 bin 目录
 export PATH="/usr/local/bin:$HOME/.local/bin:$HOME/.codex-ultra/bin:$PATH"
@@ -24,6 +25,7 @@ echo "  - Host:           ${CODEX_UI_HOST}"
 echo "  - Port:           ${PORT}"
 echo "  - Trust Proxy:    ${CODEX_UI_TRUST_PROXY}"
 echo "  - Allow Origins:  ${CODEX_UI_ALLOWED_ORIGINS}"
+echo "  - Legal Dir:      ${CODEX_UI_LEGAL_DIR}"
 echo "========================================================"
 
 # 1. 检查并自动安装 cxu
