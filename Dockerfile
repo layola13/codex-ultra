@@ -1,6 +1,6 @@
 FROM debian:bookworm-slim
 
-# 安装最小化系统运行时依赖
+# 安装最小化系统依赖
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     ca-certificates \
@@ -10,17 +10,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     procps \
     && rm -rf /var/lib/apt/lists/*
 
-# 从官方发布镜像一键安装预编译二进制（零 TS 源码，安全隔离）
+# 全局系统路径安装，支持任意非 root 用户（Render、普通用户）直接运行
 ENV CXU_NON_INTERACTIVE=true
-RUN curl -fsSL https://install.codex-ultra.top/install.sh | bash
+ENV CXU_HOME="/opt/codex-ultra"
+ENV CXU_INSTALL_DIR="/usr/local/bin"
 
-ENV PATH="/root/.codex-ultra/bin:${PATH}"
+RUN mkdir -p /opt/codex-ultra /usr/local/bin \
+    && curl -fsSL https://install.codex-ultra.top/install.sh | bash \
+    && chmod -R 777 /opt/codex-ultra || true
+
+ENV PATH="/usr/local/bin:${PATH}"
 ENV CODEX_UI_HOST="0.0.0.0"
-
-# 默认端口，Render 会自动注入 PORT 环境变量（如 10000）覆盖此值
 ENV PORT="43110"
+
 EXPOSE 43110
 EXPOSE 10000
 
-# 动态绑定 Render 的 $PORT 端口，无 $PORT 时默认使用 43110
-CMD ["sh", "-c", "exec /root/.codex-ultra/bin/cxu serve --port ${PORT:-43110}"]
+# 无论容器以 root 还是任意非 root 账号启动，均可全局执行 cxu 并动态适配 Render $PORT
+CMD ["sh", "-c", "exec cxu serve --port ${PORT:-43110}"]
