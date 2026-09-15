@@ -8,5 +8,3 @@ services:
     envVars:
       - key: CODEX_UI_HOST
         value: 0.0.0.0
-      - key: PORT
-        value: 43110
