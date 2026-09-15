@@ -44,16 +44,33 @@ Learn more at [codex-ultra.top](https://codex-ultra.top/).
 
 ## Getting Started
 
-### 1. Deploy Official Website to Vercel (Free Global CDN)
+> 🔒 **Security and Source Isolation**: This repository is for documentation and binary distribution. Cloud deployments run in isolated containers using official precompiled binaries (`install.sh`) and never access, read, or upload any raw TypeScript source code.
 
-1. Click the button to start deployment:  
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra&project-name=codex-ultra&repository-name=codex-ultra)
-2. Sign in to Vercel and click **Deploy** to automatically build and host the site.
-3. Once finished, you will have your own high-speed website mirror hosted on Vercel!
+### Option 1: One-Click Free Cloud Hosting (No Local Machine Needed)
+
+Run the workbench 24/7 on free cloud container platforms (listening on port 43110):
+
+#### Plan A: Deploy to Render (Recommended)
+Click below to deploy to Render Free Web Service:  
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/layola13/codex-ultra)  
+*Render automatically applies `render.yaml` and launches the pure Debian container with zero config.*
+
+#### Plan B: Deploy to Hugging Face Spaces (Free 2 vCPU + 16GB RAM)
+Click below to create a free Docker Space on Hugging Face:  
+[![Deploy on Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/deploy-to-spaces-lg.svg)](https://huggingface.co/new-space?template=layola13/codex-ultra)  
+*Choose Docker SDK to get a permanent free container with public HTTPS access.*
 
 ---
 
-### 2. One-Line Client Installation (Recommended)
+### Option 2: Deploy Showcase Site to Vercel (Free Global CDN)
+
+Click below to deploy the official showcase portal to Vercel:  
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra&project-name=codex-ultra&repository-name=codex-ultra)  
+*Zero-dependency static portal distributed by Vercel Anycast CDN.*
+
+---
+
+### Option 3: One-Line Local Client Installation (Recommended for daily use)
 
 Install and start the workbench instantly without manual Node.js or Bun setup:
 

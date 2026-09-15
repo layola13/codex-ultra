@@ -46,16 +46,33 @@ codex-ultra 是一套面向 Codex CLI 的本地优先 AI 编程工作台。它�
 
 ## 开始使用
 
-### 1. 官网一键部署到 Vercel (免费全球 CDN)
+> 🔒 **安全与源码隔离原则**：本仓库为官方说明与分发仓库。所有云端容器方案均通过官方 `install.sh` 安装纯预编译二进制运行包，运行在独立容器沙箱内，绝不包含、读取或上传任何未编译的 TypeScript 核心源码。
 
-1. 点击下方按钮开始部署：  
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra&project-name=codex-ultra&repository-name=codex-ultra)
-2. 登录 Vercel 账号，点击 **Deploy** 即可全自动拉取构建
-3. 部署完毕后，即可免费获得属于你的 Vercel 全球 Anycast CDN 官网镜像！
+### 方式一：云端容器一键免费托管（免本机构建，白嫖公网云服务）
+
+通过各大云平台免费 Docker 实例，自动拉取安装脚本并在公网常驻运行工作台服务（监听 43110 端口）：
+
+#### 方案 A：Render 一键部署（推荐）
+点击下方按钮一键部署到 Render 免费 Web Service：  
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/layola13/codex-ultra)  
+*Render 会自动识别本仓库的 `render.yaml` 蓝图，基于纯净 Debian 容器一键执行安装并常驻运行。*
+
+#### 方案 B：Hugging Face Spaces 免费部署（永久 2核 16G 内存）
+点击下方按钮在 Hugging Face 创建免费专属 Docker Space：  
+[![Deploy on Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/deploy-to-spaces-lg.svg)](https://huggingface.co/new-space?template=layola13/codex-ultra)  
+*空间类型选择 Docker，HF 自动分配永久免费的独立容器和 HTTPS 公网域名。*
 
 ---
 
-### 2. 本地客户端一键安装启动 (推荐)
+### 方式二：官网展示页一键部署到 Vercel (免费全球 CDN)
+
+点击下方按钮一键部署官方展示单页到 Vercel：  
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra&project-name=codex-ultra&repository-name=codex-ultra)  
+*零依赖静态网页，由 Vercel 全球 Anycast CDN 极速分发。*
+
+---
+
+### 方式三：本地客户端一键安装启动 (推荐本地日常使用)
 
 无需手动配置 Node.js、npm 或 Bun 环境，直接在终端中复制运行对应系统的命令即可自动安装：
 
