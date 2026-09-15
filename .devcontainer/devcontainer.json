@@ -1,5 +1,19 @@
 {
   "name": "codex-ultra",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "postCreateCommand": "npm install -g @codex-ultra/cxu && (cxu doctor || true)"
+  "forwardPorts": [43110],
+  "portsAttributes": {
+    "43110": {
+      "label": "Codex Ultra Workbench",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "npm install -g @codex-ultra/cxu && (cxu doctor || true)",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
 }

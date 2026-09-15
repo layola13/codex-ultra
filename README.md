@@ -60,6 +60,11 @@ Click below to create a free Docker Space on Hugging Face:
 [![Deploy on Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/deploy-to-spaces-lg.svg)](https://huggingface.co/new-space?template=layola13/codex-ultra)  
 *Choose Docker SDK to get a permanent free container with public HTTPS access.*
 
+#### Plan C: Run in GitHub Codespaces
+Click below to open a free cloud Codespace environment:  
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/layola13/codex-ultra)  
+*Run `bash launch.sh` in the terminal to start the workbench and open port 43110 in your browser.*
+
 ---
 
 ### Option 2: Deploy Showcase Site to Vercel (Free Global CDN)

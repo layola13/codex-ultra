@@ -62,6 +62,11 @@ codex-ultra 是一套面向 Codex CLI 的本地优先 AI 编程工作台。它�
 [![Deploy on Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/deploy-to-spaces-lg.svg)](https://huggingface.co/new-space?template=layola13/codex-ultra)  
 *空间类型选择 Docker，HF 自动分配永久免费的独立容器和 HTTPS 公网域名。*
 
+#### 方案 C：GitHub Codespaces 云端即开即用
+点击下方按钮一键创建 GitHub Codespace 云端开发环境：  
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/layola13/codex-ultra)  
+*进入 Codespace 终端后运行 `bash launch.sh` 即可启动服务并自动转发 43110 端口打开浏览器工作台。*
+
 ---
 
 ### 方式二：官网展示页一键部署到 Vercel (免费全球 CDN)
