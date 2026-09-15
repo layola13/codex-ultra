@@ -34,11 +34,40 @@ Learn more at [codex-ultra.top](https://codex-ultra.top/).
 | Need | Link |
 | --- | --- |
 | Product overview and usage boundaries | [Official website](https://codex-ultra.top/) |
+| Quick Start | [Getting Started](#getting-started) |
+| Deploy to Vercel | [Vercel Deployment](#1-deploy-official-website-to-vercel-free-global-cdn) |
 | Download the newest build | [GitHub Releases](https://github.com/layola13/codex-ultra/releases) (choose the top release) |
 | Read version notes | [All releases](https://github.com/layola13/codex-ultra/releases) |
 | Report a crash, install, or runtime issue | [Open an issue](https://github.com/layola13/codex-ultra/issues/new/choose) |
 | Install the cxu CLI via npm | [cxu Command Line](#cxu-command-line-npm) |
 | Switch to Chinese | [README_CN.md](./README_CN.md) |
+
+## Getting Started
+
+### 1. Deploy Official Website to Vercel (Free Global CDN)
+
+1. Click the button to start deployment:  
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-react-ui&root-directory=website&project-name=codex-ultra-website&repository-name=codex-ultra-website)
+2. Sign in to Vercel and click **Deploy** to automatically build and host the site.
+3. Once finished, you will have your own high-speed website mirror hosted on Vercel!
+
+---
+
+### 2. One-Line Client Installation (Recommended)
+
+Install and start the workbench instantly without manual Node.js or Bun setup:
+
+**Windows (PowerShell):**
+```powershell
+irm https://install.codex-ultra.top | iex
+```
+
+**Linux / macOS (Terminal):**
+```bash
+curl -fsSL https://install.codex-ultra.top | bash
+```
+
+After installation, run `cxu` in your terminal to launch the workbench.
 
 ## Screenshots
 

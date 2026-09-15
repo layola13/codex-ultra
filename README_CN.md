@@ -36,11 +36,40 @@ codex-ultra 是一套面向 Codex CLI 的本地优先 AI 编程工作台。它�
 | 需求 | 入口 |
 | --- | --- |
 | 了解产品与使用边界 | [官方网站](https://codex-ultra.top/) |
-| 下载最新版 | [GitHub Releases](https://github.com/layola13/codex-ultra/releases)（选择列表最上方版本） |
+| 极速开始使用 | [开始使用](#开始使用) |
+| 一键部署到 Vercel | [Vercel 部署](#1-官网一键部署到-vercel-免费全球-cdn) |
+| 下载最新版桌面包 | [GitHub Releases](https://github.com/layola13/codex-ultra/releases)（选择列表最上方版本） |
 | 查看版本变更 | [全部 Releases](https://github.com/layola13/codex-ultra/releases) |
 | 报告崩溃、安装或运行问题 | [提交 Issue](https://github.com/layola13/codex-ultra/issues/new/choose) |
 | 通过 npm 安装 cxu 命令行 | [cxu 命令行](#cxu-命令行-npm) |
 | 查看隐私、条款与授权 | [法律与许可](#法律与许可) |
+
+## 开始使用
+
+### 1. 官网一键部署到 Vercel (免费全球 CDN)
+
+1. 点击下方按钮开始部署：  
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-react-ui&root-directory=website&project-name=codex-ultra-website&repository-name=codex-ultra-website)
+2. 登录 Vercel 账号，点击 **Deploy** 即可全自动拉取构建
+3. 部署完毕后，即可免费获得属于你的 Vercel 全球 Anycast CDN 官网镜像！
+
+---
+
+### 2. 本地客户端一键安装启动 (推荐)
+
+无需手动配置 Node.js、npm 或 Bun 环境，直接在终端中复制运行对应系统的命令即可自动安装：
+
+**Windows (PowerShell):**
+```powershell
+irm https://install.codex-ultra.top | iex
+```
+
+**Linux / macOS (Terminal):**
+```bash
+curl -fsSL https://install.codex-ultra.top | bash
+```
+
+安装完成后，在任意终端输入 `cxu` 即可启动可视化工作台。
 
 ## 界面预览
 
