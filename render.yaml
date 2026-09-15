@@ -12,3 +12,5 @@ services:
         value: "1"
       - key: CODEX_UI_ALLOWED_ORIGINS
         value: "*"
+      - key: CODEX_HOME
+        value: /opt/codex-ultra/.codex

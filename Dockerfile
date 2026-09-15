@@ -8,25 +8,34 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip \
     git \
     procps \
+    tar \
+    gzip \
     nodejs \
     npm \
     && rm -rf /var/lib/apt/lists/*
 
-# 全局系统路径安装 cxu 与 @openai/codex CLI（预装就绪）
+# 全局系统路径安装 cxu 与官方 Standalone Codex CLI
 ENV CXU_NON_INTERACTIVE=true
 ENV CXU_HOME="/opt/codex-ultra"
 ENV CXU_INSTALL_DIR="/usr/local/bin"
+ENV CODEX_NON_INTERACTIVE=true
+ENV CODEX_HOME="/opt/codex-ultra/.codex"
+ENV CODEX_INSTALL_DIR="/usr/local/bin"
 
-RUN mkdir -p /opt/codex-ultra /usr/local/bin \
+RUN mkdir -p /opt/codex-ultra /usr/local/bin /opt/codex-ultra/.codex \
     && curl -fsSL https://install.codex-ultra.top/install.sh | bash \
-    && chmod -R 777 /opt/codex-ultra || true \
+    && (curl -fsSL https://chatgpt.com/codex/install.sh | sh) || true \
+    && (npm install -g @openai/codex || true) \
     && (ln -sf /opt/codex-ultra/runtime/bun/bin/bun /usr/local/bin/bun || true) \
-    && npm install -g @openai/codex || true
+    && (mkdir -p /root/.codex/packages/standalone && ln -sf /opt/codex-ultra/.codex/packages/standalone/current /root/.codex/packages/standalone/current 2>/dev/null || true) \
+    && (if [ -f /opt/codex-ultra/.codex/packages/standalone/current/bin/codex ]; then ln -sf /opt/codex-ultra/.codex/packages/standalone/current/bin/codex /usr/local/bin/codex; fi) \
+    && chmod -R 777 /opt/codex-ultra /root/.codex 2>/dev/null || true
 
 ENV PATH="/usr/local/bin:${PATH}"
 ENV CODEX_UI_HOST="0.0.0.0"
 ENV CODEX_UI_TRUST_PROXY="1"
 ENV CODEX_UI_ALLOWED_ORIGINS="*"
+ENV CODEX_HOME="/opt/codex-ultra/.codex"
 ENV PORT="43110"
 
 EXPOSE 43110
