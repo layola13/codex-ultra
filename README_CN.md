@@ -49,7 +49,7 @@ codex-ultra 是一套面向 Codex CLI 的本地优先 AI 编程工作台。它�
 ### 1. 官网一键部署到 Vercel (免费全球 CDN)
 
 1. 点击下方按钮开始部署：  
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-react-ui&root-directory=website&project-name=codex-ultra-website&repository-name=codex-ultra-website)
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra&project-name=codex-ultra&repository-name=codex-ultra)
 2. 登录 Vercel 账号，点击 **Deploy** 即可全自动拉取构建
 3. 部署完毕后，即可免费获得属于你的 Vercel 全球 Anycast CDN 官网镜像！
 

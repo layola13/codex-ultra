@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>codex-ultra | 面向 Codex CLI 的本地优先 AI 编程工作台</title>
+  <meta name="description" content="codex-ultra 将 Codex CLI 的终端能力放进一个可视化工作台：在同一窗口中管理对话、工作区、任务计划、工具调用、文件差异、模型渠道和插件。" />
+  <link rel="icon" href="./logo.jpeg" />
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(22, 29, 47, 0.7);
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(9, 13, 22, 0.85);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .btn-vercel {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      background: #fff;
+      color: #000;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-vercel:hover { opacity: 0.9; }
+    .hero {
+      max-width: 1000px;
+      margin: 4rem auto 2rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 0.3rem 0.85rem;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent);
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+    }
+    .install-box {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      text-align: left;
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+    }
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .cmd-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.9rem;
+      color: #38bdf8;
+    }
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover { background: rgba(255, 255, 255, 0.2); }
+    .screenshots {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .screenshot-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+    .screenshot-card:hover { transform: translateY(-4px); }
+    .screenshot-card img {
+      width: 100%;
+      display: block;
+    }
+    .screenshot-caption {
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .screenshot-caption strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 5rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="brand">
+      <img src="./logo.jpeg" alt="Logo" />
+      <span>codex-ultra</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://codex-ultra.top/" target="_blank">官网主站</a>
+      <a href="https://github.com/layola13/codex-ultra" target="_blank">GitHub</a>
+      <a href="https://github.com/layola13/codex-ultra/releases" target="_blank">下载 Releases</a>
+      <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra&project-name=codex-ultra&repository-name=codex-ultra" target="_blank" class="btn-vercel">
+        <svg height="12" viewBox="0 0 1155 1000" fill="currentColor"><path d="m577.3 0 577.4 1000H0z"/></svg>
+        Deploy with Vercel
+      </a>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="badge-pill">🚀 本地优先 · 零依赖一键运行 · Codex CLI 可视化工作台</div>
+    <h1>面向 Codex CLI 的可视化 AI 编程工作台</h1>
+    <p class="subtitle">
+      在同一桌面窗口中管理历史对话、本地工作区、长任务计划、工具调用、代码差异、模型渠道和插件。优先在本机运行，安全私密。
+    </p>
+
+    <div class="install-box">
+      <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('ps')">Windows (PowerShell)</button>
+        <button class="tab-btn" onclick="switchTab('sh')">Linux / macOS</button>
+        <button class="tab-btn" onclick="switchTab('npm')">npm</button>
+      </div>
+      <div id="cmd-container" class="cmd-row">
+        <span id="cmd-text">irm https://install.codex-ultra.top | iex</span>
+        <button class="copy-btn" onclick="copyCommand()">复制</button>
+      </div>
+    </div>
+  </main>
+
+  <section class="screenshots">
+    <div class="screenshot-card">
+      <img src="./screen.png" alt="工作台主界面" />
+      <div class="screenshot-caption">
+        <strong>三栏工作台与新对话</strong>
+        支持会话历史、实时流式 Markdown、代码对比与权限预设。
+      </div>
+    </div>
+    <div class="screenshot-card">
+      <img src="./work.png" alt="多智能体长任务" />
+      <div class="screenshot-caption">
+        <strong>多智能体协作与任务计划</strong>
+        展示 Plan / Goal 步骤执行状态，支持 Sidechat 隔离上下文。
+      </div>
+    </div>
+    <div class="screenshot-card">
+      <img src="./config.png" alt="模型渠道设置" />
+      <div class="screenshot-caption">
+        <strong>灵活渠道与倍率分组</strong>
+        支持 Responses、Chat Completions、Ollama 等模型接入。
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 codex-ultra 项目维护团队 · <a href="https://github.com/layola13/codex-ultra">GitHub 源码与发布</a> · <a href="https://codex-ultra.top/">官方主站</a></p>
+  </footer>
+
+  <script>
+    const commands = {
+      ps: 'irm https://install.codex-ultra.top | iex',
+      sh: 'curl -fsSL https://install.codex-ultra.top | bash',
+      npm: 'npm install -g @codex-ultra/cxu && cxu doctor'
+    };
+    function switchTab(type) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('cmd-text').innerText = commands[type];
+    }
+    function copyCommand() {
+      const text = document.getElementById('cmd-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.innerText = '已复制！';
+        setTimeout(() => { btn.innerText = '复制'; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -47,7 +47,7 @@ Learn more at [codex-ultra.top](https://codex-ultra.top/).
 ### 1. Deploy Official Website to Vercel (Free Global CDN)
 
 1. Click the button to start deployment:  
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-react-ui&root-directory=website&project-name=codex-ultra-website&repository-name=codex-ultra-website)
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra&project-name=codex-ultra&repository-name=codex-ultra)
 2. Sign in to Vercel and click **Deploy** to automatically build and host the site.
 3. Once finished, you will have your own high-speed website mirror hosted on Vercel!
 
