@@ -65,6 +65,11 @@ Click below to open a free cloud Codespace environment:
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/layola13/codex-ultra)  
 *Run `bash launch.sh` in the terminal to start the workbench and open port 43110 in your browser.*
 
+#### Plan D: Run in Google Colab
+Click below to open the cloud launcher notebook directly in Google Colab:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)
+*Run the notebook cells in order. It installs the official runtime, starts `cxu`, and creates a public tunnel through Cloudflare Quick Tunnel by default.*
+
 ---
 
 ### Option 2: Deploy Showcase Site to Vercel (Free Global CDN)
