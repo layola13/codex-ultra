@@ -71,9 +71,9 @@ Click below to open the cloud launcher notebook directly in Google Colab:
 *Run the notebook cells in order. It installs the official runtime, starts `cxu`, and creates a public tunnel through Cloudflare Quick Tunnel by default.*
 
 #### Plan E: Run in Deepnote
-Click below to open the same launcher notebook directly in Deepnote:
-[![Launch in Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra%2Fblob%2Fmaster%2Flaunch.ipynb)
-*Run the notebook cells in order, same as Google Colab. It installs the official runtime, starts `cxu`, and creates a public tunnel through Cloudflare Quick Tunnel by default. Keep the Deepnote session running while you use the public URL.*
+Click below to open the dedicated Deepnote launcher notebook directly in Deepnote:
+[![Launch in Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra%2Fblob%2Fmaster%2Flaunch-deepnote.ipynb)
+*Run the notebook cells in order. `launch-deepnote.ipynb` installs Node.js 20 LTS first (Deepnote images lack Node, otherwise `cxu serve` exits 127), then installs the official runtime, starts `cxu`, and creates a public tunnel through Cloudflare Quick Tunnel by default. Keep the Deepnote session running while you use the public URL.*
 
 ---
 
