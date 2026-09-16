@@ -72,11 +72,6 @@ codex-ultra 是一套面向 Codex CLI 的本地优先 AI 编程工作台。它�
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)  
 *按顺序运行笔记本单元格即可自动安装官方运行时、启动 `cxu`，并默认通过 Cloudflare Quick Tunnel 生成公网访问地址。*
 
-#### 方案 E：在 Deepnote 中运行
-点击下方按钮在 Deepnote 中直接打开专用启动笔记本（请勿复用 Colab 的 `launch.ipynb`）：  
-[![Launch in Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra%2Fblob%2Fmaster%2Flaunch-deepnote.ipynb)  
-*按顺序运行 `launch-deepnote.ipynb` 单元格即可：先自动安装 Node.js 20 LTS（Deepnote 基础镜像缺 Node，否则 `cxu serve` 会 127 退出），再安装官方运行时、启动 `cxu`，并默认通过 Cloudflare Quick Tunnel 生成公网访问地址。使用期间请保持 Deepnote 会话运行。*
-
 ---
 
 ### 方式二：官网展示页一键部署到 Vercel (免费全球 CDN)
