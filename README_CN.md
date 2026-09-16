@@ -68,9 +68,10 @@ codex-ultra 是一套面向 Codex CLI 的本地优先 AI 编程工作台。它�
 *进入 Codespace 终端后运行 `bash launch.sh` 即可启动服务并自动转发 43110 端口打开浏览器工作台。*
 
 #### 方案 D：在 Google Colab 中运行
-点击下方按钮在 Google Colab 中直接打开云端启动笔记本：  
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)  
-*按顺序运行笔记本单元格即可自动安装官方运行时、启动 `cxu`，并默认通过 Cloudflare Quick Tunnel 生成公网访问地址。*
+以下两份启动笔记本都会保留，按需二选一：  
+- 标准版（`launch.ipynb`，不连接谷歌硬盘）：[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)  
+- 硬盘版（`launch-drive.ipynb`，开头先挂载谷歌硬盘）：[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch-drive.ipynb)  
+*按顺序运行笔记本单元格即可自动安装官方运行时、启动 `cxu`，并默认通过 Cloudflare Quick Tunnel 生成公网访问地址。硬盘版仅在开头增加挂载谷歌硬盘步骤（`/content/drive`，持久化目录 `/content/drive/MyDrive/codex-ultra`），其余与标准版完全一致。*
 
 ---
 

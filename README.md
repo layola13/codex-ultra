@@ -66,9 +66,10 @@ Click below to open a free cloud Codespace environment:
 *Run `bash launch.sh` in the terminal to start the workbench and open port 43110 in your browser.*
 
 #### Plan D: Run in Google Colab
-Click below to open the cloud launcher notebook directly in Google Colab:
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)
-*Run the notebook cells in order. It installs the official runtime, starts `cxu`, and creates a public tunnel through Cloudflare Quick Tunnel by default.*
+Two launcher notebooks are kept. Pick the one that fits your needs:
+- Standard (`launch.ipynb`, no Google Drive): [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)
+- Drive edition (`launch-drive.ipynb`, mounts Google Drive first): [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch-drive.ipynb)
+*Run the notebook cells in order. It installs the official runtime, starts `cxu`, and creates a public tunnel through Cloudflare Quick Tunnel by default. The Drive edition only adds a Google Drive mount step at the beginning (`/content/drive`, persistent folder `/content/drive/MyDrive/codex-ultra`); everything else is identical.*
 
 ---
 
