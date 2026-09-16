@@ -70,6 +70,11 @@ Click below to open the cloud launcher notebook directly in Google Colab:
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)
 *Run the notebook cells in order. It installs the official runtime, starts `cxu`, and creates a public tunnel through Cloudflare Quick Tunnel by default.*
 
+#### Plan E: Run in Deepnote
+Click below to open the same launcher notebook directly in Deepnote:
+[![Launch in Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra%2Fblob%2Fmaster%2Flaunch.ipynb)
+*Run the notebook cells in order, same as Google Colab. It installs the official runtime, starts `cxu`, and creates a public tunnel through Cloudflare Quick Tunnel by default. Keep the Deepnote session running while you use the public URL.*
+
 ---
 
 ### Option 2: Deploy Showcase Site to Vercel (Free Global CDN)

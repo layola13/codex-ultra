@@ -67,6 +67,16 @@ codex-ultra 是一套面向 Codex CLI 的本地优先 AI 编程工作台。它�
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/layola13/codex-ultra)  
 *进入 Codespace 终端后运行 `bash launch.sh` 即可启动服务并自动转发 43110 端口打开浏览器工作台。*
 
+#### 方案 D：在 Google Colab 中运行
+点击下方按钮在 Google Colab 中直接打开云端启动笔记本：  
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)  
+*按顺序运行笔记本单元格即可自动安装官方运行时、启动 `cxu`，并默认通过 Cloudflare Quick Tunnel 生成公网访问地址。*
+
+#### 方案 E：在 Deepnote 中运行
+点击下方按钮在 Deepnote 中直接打开同一个云端启动笔记本：  
+[![Launch in Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Flayola13%2Fcodex-ultra%2Fblob%2Fmaster%2Flaunch.ipynb)  
+*与 Google Colab 操作一致，按顺序运行笔记本单元格即可自动安装官方运行时、启动 `cxu`，并默认通过 Cloudflare Quick Tunnel 生成公网访问地址。使用期间请保持 Deepnote 会话运行。*
+
 ---
 
 ### 方式二：官网展示页一键部署到 Vercel (免费全球 CDN)
