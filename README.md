@@ -69,7 +69,7 @@ Click below to open a free cloud Codespace environment:
 Two launcher notebooks are kept. Pick the one that fits your needs:
 - Standard (`launch.ipynb`, no Google Drive): [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)
 - Drive edition (`launch-drive.ipynb`, mounts Google Drive first): [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch-drive.ipynb)
-*Run the notebook cells in order. It installs the official runtime, starts `cxu`, and creates a public tunnel through Cloudflare Quick Tunnel by default. The Drive edition only adds a Google Drive mount step at the beginning (`/content/drive`, persistent folder `/content/drive/MyDrive/codex-ultra`); everything else is identical.*
+*Run the notebook cells in order. It installs the official runtime, runs `cxu install --all --yes` to install missing CLI tools (including Claude, Grok, Pi, and OpenCode), displays `cxu doctor` results, then starts `cxu` and creates a public tunnel through Cloudflare Quick Tunnel by default. Check the doctor output for any tools whose installation failed. The Drive edition only adds a Google Drive mount step at the beginning (`/content/drive`, persistent folder `/content/drive/MyDrive/codex-ultra`); everything else is identical.*
 
 ---
 

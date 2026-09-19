@@ -71,7 +71,7 @@ codex-ultra 是一套面向 Codex CLI 的本地优先 AI 编程工作台。它�
 以下两份启动笔记本都会保留，按需二选一：  
 - 标准版（`launch.ipynb`，不连接谷歌硬盘）：[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch.ipynb)  
 - 硬盘版（`launch-drive.ipynb`，开头先挂载谷歌硬盘）：[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/layola13/codex-ultra/blob/master/launch-drive.ipynb)  
-*按顺序运行笔记本单元格即可自动安装官方运行时、启动 `cxu`，并默认通过 Cloudflare Quick Tunnel 生成公网访问地址。硬盘版仅在开头增加挂载谷歌硬盘步骤（`/content/drive`，持久化目录 `/content/drive/MyDrive/codex-ultra`），其余与标准版完全一致。*
+*按顺序运行笔记本单元格即可自动安装官方运行时，执行 `cxu install --all --yes` 安装缺失的 CLI（包括 Claude、Grok、Pi 和 OpenCode），显示 `cxu doctor` 检测结果，再启动 `cxu`，并默认通过 Cloudflare Quick Tunnel 生成公网访问地址。请检查 doctor 输出中是否仍有安装失败的工具。硬盘版仅在开头增加挂载谷歌硬盘步骤（`/content/drive`，持久化目录 `/content/drive/MyDrive/codex-ultra`），其余与标准版完全一致。*
 
 ---
 
