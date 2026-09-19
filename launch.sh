@@ -16,7 +16,7 @@ export PORT="${PORT:-43110}"
 export CODEX_UI_LEGAL_DIR="${CODEX_UI_LEGAL_DIR:-$(pwd)}"
 
 # 确保全局 PATH 包含常见 bin 目录
-export PATH="/usr/local/bin:$HOME/.local/bin:$HOME/.codex-ultra/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/.local/bin:$HOME/.codex-ultra/bin:$HOME/.claude/bin:$HOME/.grok/bin:$HOME/.opencode/bin:$HOME/.bun/bin:$PATH"
 
 echo "========================================================"
 echo "   🚀 Starting Codex Ultra in Cloud / Codespaces        "
@@ -46,7 +46,13 @@ if ! command -v codex >/dev/null 2>&1; then
   fi
 fi
 
-# 3. 启动 cxu 服务
+# 3. 安装或更新所有可选智能体 CLI（Claude、Grok、Pi、OpenCode）
+if command -v cxu >/dev/null 2>&1; then
+  echo "==> Ensuring optional agent CLIs are installed via cxu..."
+  cxu install --all --yes || true
+fi
+
+# 4. 启动 cxu 服务
 if command -v cxu >/dev/null 2>&1; then
   echo "==> Launching cxu serve on port ${PORT}..."
   exec cxu serve --port "${PORT}" "$@"
